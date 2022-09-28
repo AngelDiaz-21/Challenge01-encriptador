@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F3F5FC;
+}
+
+header{
+    margin: 15px 35px;
+}
+
+main{
+    margin: 30px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    padding: 20px;
+    border-radius: 20px;
+}
+
+textarea{
+    overflow: hidden;
+    resize: none;
+    border: none;
+}
+
+.write-here{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.write-here textarea{
+    background-color: #F3F5FC;
+    color: #0A3871;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    height: 300px;
+    width: 100%;
+}
+
+.warning-writter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0PX;
+}
+
+.warning-writter img{
+    margin-right: 10px;
+}
+
+.buttons-encriptar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.result-message{
+    width: 100%;
+    background-color: white;
+    padding: 20px 20px 0px;
+    border-radius: 20px;
+}
+
+.result-message textarea{
+    color: #495057;
+    background-image: url('assets/mensaje-noEncontrado.png');
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+}
+
+.btn-encriptar{
+    background-color: #0A3871;
+    color: white;
+    border: 1px solid #0A3871;
+}
+
+.btn-desencriptar{
+    background-color: white;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+}
+
+.button-copy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-copy{
+    background-color: white;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    width: 80%;
+    display: none;
+}
+
+footer{
+    text-align: center;
+    margin: 35px 35px;
+}
+
+footer h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+footer .footer-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+footer .footer-logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.fa-brands{
+    margin-right: 5px;
+}
+
+.fa-linkedin{
+    color: blue;
+}
