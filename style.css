@@ -95,6 +95,7 @@ textarea{
     font-size: 20px;
     width: 100%;
     padding: 5px;
+    height: 150px;
 }
 
 .button-copy{
@@ -170,5 +171,7 @@ footer .footer-logo a{
     .result-message textarea{
         background-image: url('assets/mensaje-noEncontrado720.svg');
         background-size: 700px;
+        height: 250px;
+        padding: 20px;
     }
 }
