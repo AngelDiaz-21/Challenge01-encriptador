@@ -89,8 +89,7 @@ textarea{
     background-image: url('assets/mensaje-noEncontrado.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
+    background-position: center;
     color: #495057;
     line-height: 150%;
     font-size: 20px;
@@ -174,5 +173,46 @@ footer .footer-logo a{
         background-size: 700px;
         height: 250px;
         padding: 20px;
+    }
+}
+
+@media (min-width: 1200px){
+    main{
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        margin: 0px 15%;
+    }
+
+    .write-here{
+        width: 50%;
+    }
+
+    .write-here textarea{
+        height: 350px;
+        font-size: 26px;
+    }
+
+    .result-message{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        padding: 0px;
+        height: 500px;
+    }
+
+    .result-message textarea{
+        background-image: url('assets/buscando-personaje.svg');
+        background-size: contain;
+        font-size: 22px;
+        height: 385px;
+    }
+
+    .button-copy{
+        padding: 0 10%;
+    }
+
+    footer h2{
+        font-size: 26px;
     }
 }
