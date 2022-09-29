@@ -23,6 +23,7 @@ main{
 button{
     padding: 15px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 textarea{
@@ -160,8 +161,17 @@ footer .footer-logo a{
         width: 48%;
     }
 
+    .btn-encriptar:hover{
+        background-color: rgba(13, 70, 141, 0.9);
+        border: 1px solid black;
+    }
+
     .btn-desencriptar{
         width: 48%;
+    }
+
+    .btn-desencriptar:hover{
+        background-color: rgba(254, 245, 240, 1);
     }
 
     .result-message{
@@ -173,6 +183,10 @@ footer .footer-logo a{
         background-size: 700px;
         height: 250px;
         padding: 20px;
+    }
+
+    .btn-copy:hover{
+        background-color: rgba(254, 245, 240, 1);
     }
 }
 
