@@ -6,21 +6,22 @@
 
 body{
     background-color: #F3F5FC;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 header{
-    margin: 15px 35px;
+    margin: 2% 5%;
 }
 
 main{
-    margin: 30px 35px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 20px 5%;
 }
 
 button{
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
 }
 
@@ -28,10 +29,10 @@ textarea{
     overflow: hidden;
     resize: none;
     border: none;
+    border-radius: 20px;
 }
 
 .write-here{
-    width: 100%;
     margin-bottom: 40px;
 }
 
@@ -46,6 +47,7 @@ textarea{
 }
 
 .warning-writter {
+    font-size: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -59,26 +61,7 @@ textarea{
 .buttons-encriptar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 10px;
-}
-
-.result-message{
-    width: 100%;
-    background-color: white;
-    padding: 20px 20px 0px;
-    border-radius: 20px;
-}
-
-.result-message textarea{
-    color: #495057;
-    background-image: url('assets/mensaje-noEncontrado.png');
-    position: relative;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    width: 100%;
 }
 
 .btn-encriptar{
@@ -93,19 +76,32 @@ textarea{
     color: #0A3871;
 }
 
+.result-message{
+    background-color: white;
+    padding: 20px 30px 0px;
+    border-radius: 20px;
+}
+
+.result-message textarea{
+    color: #495057;
+    background-image: url('assets/mensaje-noEncontrado.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+}
+
 .button-copy{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 15px;
-    width: 100%;
 }
 
 .btn-copy{
     background-color: white;
     border: 1px solid #0A3871;
     color: #0A3871;
-    width: 80%;
     display: none;
 }
 
@@ -137,4 +133,37 @@ footer .footer-logo a{
 
 .fa-linkedin{
     color: blue;
+}
+
+@media (min-width: 720px){
+    header{
+        margin: 2% 10%;
+    }
+
+    main{
+        margin: 10px 10%;
+    }
+
+    .buttons-encriptar{
+        flex-direction: row;
+        justify-content: center;
+        gap: 4%;
+    }
+
+    .btn-encriptar{
+        width: 48%;
+    }
+
+    .btn-desencriptar{
+        width: 48%;
+    }
+
+    .result-message{
+        padding: 0px;
+    }
+
+    .result-message textarea{
+        background-image: url('assets/mensaje-noEncontrado720.svg');
+        background-size: 700px;
+    }
 }
