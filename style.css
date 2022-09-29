@@ -103,6 +103,7 @@ textarea{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    padding: 0px 10%;
 }
 
 .btn-copy{
@@ -220,10 +221,6 @@ footer .footer-logo a{
         background-size: contain;
         font-size: 22px;
         height: 385px;
-    }
-
-    .button-copy{
-        padding: 0 10%;
     }
 
     footer h2{
