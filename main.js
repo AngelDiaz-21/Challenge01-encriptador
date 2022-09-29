@@ -10,6 +10,13 @@ const btnEncriptar = () =>{
     buttonCopy.style.marginBottom = '15px';
 }
 
+const btnCopy = () =>{
+    textResult.select();
+    navigator.clipboard.writeText(textResult.value);
+    textResult.value = "";
+    alert("¡Texto copiado!");
+}
+
 const encriptar = (encryptedText) =>{
     let matrizCodigo = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']];
     encryptedText  = encryptedText.toLowerCase();
