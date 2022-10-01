@@ -18,11 +18,16 @@ const btnDesencriptar = () => {
     buttonCopy.style.marginBottom = '15px';
 }
 
-const btnCopy = () =>{
-    textResult.select();
-    navigator.clipboard.writeText(textResult.value);
-    textResult.value = "";
-    alert("¡Texto copiado!");
+const btnCopy = async () =>{
+    try {
+        await navigator.clipboard.writeText(textResult.value);
+        textResult.value = "";
+        buttonCopy.style.display = 'none';
+        alert("¡Texto copiado!");
+    } catch (error) {
+        alert('Error al copia el texto', error)
+        throw error
+    }
 }
 
 const encriptar = (encryptedText) =>{
