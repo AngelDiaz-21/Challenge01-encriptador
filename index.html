@@ -14,14 +14,17 @@
     </header>
     <main>
         <section class="write-here">
-            <textarea class="text-write" name="text-write" placeholder="Ingrese el texto aquí"></textarea>
+            <textarea class="text-write" name="text-write" placeholder="Ingrese el texto aquí" onkeyup="verificar(this.value);"></textarea>
             <div class="warning-writter">
                 <img src="assets/advertencia.svg" alt="advertencia">
                 <span>Solo letras minúsculas y sin acento.</span>
             </div>
             <div class="buttons-encriptar">
-                <button onclick="btnEncriptar()" class="btn-encriptar">Encriptar</button>
-                <button onclick="btnDesencriptar()" class="btn-desencriptar">Desencriptar</button>
+                <button onclick="btnEncriptar()" class="disabled btn-encriptar" id="btn-encriptar" disabled>Encriptar</button>
+                <button onclick="btnDesencriptar()" class="disabled btn-desencriptar" id="btn-desencriptar" disabled>Desencriptar</button>
+            </div>
+            <div class="warning-button">
+                <span>Debes de escribir al menos 3 letras</span>
             </div>
         </section>
         <section class="result-message">
