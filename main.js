@@ -24,6 +24,7 @@ const btnCopy = async () =>{
         textResult.value = "";
         buttonCopy.style.display = 'none';
         alert("¡Texto copiado!");
+        getScreenSizeToChangeImage();
     } catch (error) {
         alert('Error al copia el texto', error)
         throw error
@@ -53,3 +54,9 @@ const desencriptar = (encryptedText) =>{
     }
     return encryptedText;
 }
+
+const getScreenSizeToChangeImage = () => {
+    if(screen.width < 720) return textResult.style.backgroundImage = "url('assets/mensaje-noEncontrado.svg')";
+    return (screen.width < 1200) ? textResult.style.backgroundImage = "url('assets/mensaje-noEncontrado720.svg')" 
+                                    : textResult.style.backgroundImage = "url('assets/buscando-personaje.svg')"
+};
