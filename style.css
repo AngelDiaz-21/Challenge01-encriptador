@@ -24,6 +24,7 @@ button{
     padding: 15px;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 textarea{
@@ -76,6 +77,18 @@ textarea{
     background-color: white;
     border: 1px solid #0A3871;
     color: #0A3871;
+}
+
+.disabled{
+    background-color: gainsboro;
+    color: black;
+}
+
+.warning-button{
+    margin: 10px 0px;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(136, 1, 1);
 }
 
 .result-message{
@@ -173,6 +186,11 @@ footer .footer-logo a{
 
     .btn-desencriptar:hover{
         background-color: rgba(254, 245, 240, 1);
+    }
+
+    .disabled:hover{
+        background-color: gainsboro;
+        color: black;
     }
 
     .result-message{
