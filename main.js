@@ -7,18 +7,12 @@ const warningBtn = document.querySelector('.warning-button');
 
 const btnEncriptar = () =>{
     const encryptedText = encriptar(textWrite.value);
-    textResult.value = encryptedText;
-    textResult.style.backgroundImage = 'none';
-    buttonCopy.style.display = 'block';
-    buttonCopy.style.marginBottom = '15px';
+    stylesOfTheResultMessage(encryptedText);
 }
 
 const btnDesencriptar = () => {
     const encryptedText = desencriptar(textWrite.value);
-    textResult.value = encryptedText;
-    textResult.style.backgroundImage = 'none';
-    buttonCopy.style.display = 'block';
-    buttonCopy.style.marginBottom = '15px';
+    stylesOfTheResultMessage(encryptedText);
 }
 
 const btnCopy = async () =>{
@@ -78,4 +72,11 @@ function verificar(valor) {
         buttonDesencriptar.classList.add("disabled");
         warningBtn.style.display = 'block';
     }
+}
+
+const stylesOfTheResultMessage = (encryptedText) => {
+    textResult.value = encryptedText;
+    textResult.style.backgroundImage = 'none';
+    buttonCopy.style.display = 'block';
+    buttonCopy.style.marginBottom = '15px';
 }
