@@ -6,13 +6,17 @@ const buttonDesencriptar = document.getElementById("btn-desencriptar");
 const warningBtn = document.querySelector('.warning-button');
 
 const btnEncriptar = () =>{
-    const encryptedText = encriptar(textWrite.value);
-    stylesOfTheResultMessage(encryptedText);
+    const encryptedText = textWrite.value;
+    let matrizCodigo = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']];
+    const textResult = replaceText(matrizCodigo, encryptedText);
+    stylesOfTheResultMessage(textResult);
 }
 
 const btnDesencriptar = () => {
-    const encryptedText = desencriptar(textWrite.value);
-    stylesOfTheResultMessage(encryptedText);
+    const desencryptedText = textWrite.value;
+    let matrizCodigo = [['enter', 'e'], ['imes', 'i'], ['ai', 'a'], ['ober', 'o'], ['ufat', 'u']];
+    const textResult = replaceText(matrizCodigo, desencryptedText);
+    stylesOfTheResultMessage(textResult);
 }
 
 const btnCopy = async () =>{
@@ -26,30 +30,6 @@ const btnCopy = async () =>{
         alert('Error al copia el texto', error)
         throw error
     }
-}
-
-const encriptar = (encryptedText) =>{
-    let matrizCodigo = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']];
-    encryptedText  = encryptedText.toLowerCase();
-
-    for (let index = 0; index < matrizCodigo.length; index++) {
-        if (encryptedText.includes(matrizCodigo[index][0])) {
-            encryptedText = encryptedText.replaceAll(matrizCodigo[index][0], matrizCodigo[index][1]);
-        }
-    }
-    return encryptedText;
-}
-
-const desencriptar = (encryptedText) =>{
-    let matrizCodigo = [['enter', 'e'], ['imes', 'i'], ['ai', 'a'], ['ober', 'o'], ['ufat', 'u']];
-    encryptedText  = encryptedText.toLowerCase();
-
-    for (let index = 0; index < matrizCodigo.length; index++) {
-        if (encryptedText.includes(matrizCodigo[index][0])) {
-            encryptedText = encryptedText.replaceAll(matrizCodigo[index][0], matrizCodigo[index][1]);
-        }
-    }
-    return encryptedText;
 }
 
 const getScreenSizeToChangeImage = () => {
@@ -74,9 +54,19 @@ function verificar(valor) {
     }
 }
 
-const stylesOfTheResultMessage = (encryptedText) => {
-    textResult.value = encryptedText;
+const stylesOfTheResultMessage = (text) => {
+    textResult.value = text;
     textResult.style.backgroundImage = 'none';
     buttonCopy.style.display = 'block';
     buttonCopy.style.marginBottom = '15px';
+}
+
+const replaceText = (matrizCodigo, text) =>{
+    text  = text.toLowerCase();
+    for (let index = 0; index < matrizCodigo.length; index++) {
+        if (text.includes(matrizCodigo[index][0])) {
+            text = text.replaceAll(matrizCodigo[index][0], matrizCodigo[index][1]);
+        }
+    }
+    return text;
 }
