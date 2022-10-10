@@ -38,7 +38,7 @@ const getScreenSizeToChangeImage = () => {
                                     : textResult.style.backgroundImage = "url('assets/buscando-personaje.svg')"
 };
 
-function verificar(valor) {
+function validationButtons(valor) {
     if (valor.length >= 3) {
         buttonEncriptar.disabled = false;
         buttonDesencriptar.disabled = false;
