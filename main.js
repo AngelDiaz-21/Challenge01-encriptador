@@ -5,18 +5,35 @@ const buttonEncriptar = document.getElementById("btn-encriptar");
 const buttonDesencriptar = document.getElementById("btn-desencriptar");
 const warningBtn = document.querySelector('.warning-button');
 
-const btnEncriptar = () =>{
-    const encryptedText = textWrite.value;
+const btnEncrypt = () =>{
+    const textToEncrypt = textWrite.value;
     let matrizCodigo = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']];
-    const textResult = replaceText(matrizCodigo, encryptedText);
-    stylesOfTheResultMessage(textResult);
+    const encryptedText = replaceText(matrizCodigo, textToEncrypt);
+    stylesOfTheResultMessage(encryptedText);
 }
 
-const btnDesencriptar = () => {
-    const desencryptedText = textWrite.value;
+const btnDesencrypt = () => {
+    const textToDesencrypt = textWrite.value;
     let matrizCodigo = [['enter', 'e'], ['imes', 'i'], ['ai', 'a'], ['ober', 'o'], ['ufat', 'u']];
-    const textResult = replaceText(matrizCodigo, desencryptedText);
-    stylesOfTheResultMessage(textResult);
+    const desencryptText = replaceText(matrizCodigo, textToDesencrypt);
+    stylesOfTheResultMessage(desencryptText);
+}
+
+const replaceText = (matrizCodigo, text) =>{
+    text = text.toLowerCase();
+    for (let index = 0; index < matrizCodigo.length; index++) {
+        if (text.includes(matrizCodigo[index][0])) {
+            text = text.replaceAll(matrizCodigo[index][0], matrizCodigo[index][1]);
+        }
+    }
+    return text;
+}
+
+const stylesOfTheResultMessage = (text) => {
+    textResult.value = text;
+    textResult.style.backgroundImage = 'none';
+    buttonCopy.style.display = 'block';
+    buttonCopy.style.marginBottom = '15px';
 }
 
 const btnCopy = async () =>{
@@ -38,7 +55,7 @@ const getScreenSizeToChangeImage = () => {
                                     : textResult.style.backgroundImage = "url('assets/buscando-personaje.svg')"
 };
 
-function validationButtons(valor) {
+function validationToActivateButtons(valor) {
     if (valor.length >= 3) {
         buttonEncriptar.disabled = false;
         buttonDesencriptar.disabled = false;
@@ -52,21 +69,4 @@ function validationButtons(valor) {
         buttonDesencriptar.classList.add("disabled");
         warningBtn.style.display = 'block';
     }
-}
-
-const stylesOfTheResultMessage = (text) => {
-    textResult.value = text;
-    textResult.style.backgroundImage = 'none';
-    buttonCopy.style.display = 'block';
-    buttonCopy.style.marginBottom = '15px';
-}
-
-const replaceText = (matrizCodigo, text) =>{
-    text  = text.toLowerCase();
-    for (let index = 0; index < matrizCodigo.length; index++) {
-        if (text.includes(matrizCodigo[index][0])) {
-            text = text.replaceAll(matrizCodigo[index][0], matrizCodigo[index][1]);
-        }
-    }
-    return text;
 }
